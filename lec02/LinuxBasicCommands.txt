@@ -1,0 +1,27 @@
+#What is a shell ?
+Shell is a program that takes commands from keyboard and 
+passes it to operating system to carry out.
+
+#What is terminal emulator ?
+When we use graphical user interface(GUI) , we need another program to 
+interact with the shell - is called terminal emulator which is simply called terminal.
+
+#Lunching terminal emulator or terminal : 
+Simply open up from show application on the lower left corner. 
+short cut key -> ctrl+alt+t
+It will open up with something that we call shell prompt like this ->me@linuxbox:~$
+If the last character is a dollar(#)sign then it indicates a superuser or root or have the super user previlages. 
+
+#Quick copy-and-paste technique in shell prompt :
+Highlighting some text by holding down the left mouse button and dragging 
+the mouse over it (or double-clicking a word), it is copied into a buffer maintained by X. Pressing the middle mouse button will cause the text to be pasted 
+at the cursor location.
+
+*********************Some simple commands*******************
+
+$date -> this will represent the current date and time 
+$cal -> This will display current month's calender
+$df -> Will display the free amount of spaces of our disk drives.
+$free -> display the amount of free space
+$exit -> Ending a session of a terminal emulator window by closing the terminal.
+
