@@ -25,3 +25,43 @@ $df -> Will display the free amount of spaces of our disk drives.
 $free -> display the amount of free space
 $exit -> Ending a session of a terminal emulator window by closing the terminal.
 
+********************Chapter2-File system in linux**************
+#Linux have a single file system tree, regardless of how many drives 
+or storage devices are attached to the computer.
+
+$pwd -> display the current working directory 
+$ls -> listing all the files and directories of current working directory.
+	Actually we can use 'ls' command to listing the content of any directory .
+$ls -1 ->display the listing in a columnar way
+$ls -a ->Filenames that begin with a period character are hidden. This only means 
+	that ls will not list them unless we say ls -a
+
+#changing the working directory 
+we can change the directory in two ways using absolute pathnames and 
+relative path names
+
+#Absolute path name : An absolute pathnamebegins with 
+the root directory and follows the tree branch by branch 
+until the path to the desired directory or file is completed.
+
+#Where an absolute pathname starts from the root directory and 
+leads to its destination, a relative pathnamestarts from the 
+working directory and uses two special notation . That is (.)dot 
+and (..)dot dot.
+The .notation refers to the working directory, and the ..notation
+refers to the working directory’s parent directory.
+
+############commands#################
+
+$cd -> directly change the directory to home directory of the current user
+$cd /usr/bin -> changing directory to bin of usr directory using absolute path
+$cd .. -> returns to parent directory of current directory
+$cd ./bin -> changing directory to bin of parent usr directory using absolute path
+$cd - -> Changes the working directory to the previous working directory.
+$cd ~user_name -> Changes the working directory to the home directoryof user_name.
+
+$su -> Give us the superuser previlages
+$su - ->Change the directory directly to root directory
+$su - user_name -> change directory to user_name home 
+
+
