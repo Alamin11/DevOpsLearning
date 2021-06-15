@@ -1,0 +1,23 @@
+﻿GUI root login issue on Ubuntu
+Step 1:
+First, complete the root password setup
+$sudo passwd
+//this will help to set up a new root password wich will be the later user to login to GUI.
+
+
+Step 2:
+Next setting up GDM configuration to allow gui root login
+$ nano /etc/gdm3/custom.conf
+As a root user edit the file using nano editor add the 
+AllowRoot=true
+
+
+Step 3:
+Now edit PAM authentication daemon configuration file and comment line which denies root access to graphical user interface.
+$ nano /etc/pam.d/gdm-password
+Now it will open up on nano editor and put # in front of the line containing - 
+auth   required        pam_succeed_if.so user != root quiet_success
+
+
+All done -Now reboot ubuntu system .
+And click not listed ? and enter root as user and the root password in the password field .
