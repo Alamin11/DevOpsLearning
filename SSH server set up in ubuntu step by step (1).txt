@@ -1,0 +1,76 @@
+﻿SSH server set up in ubuntu step by step
+Step 1: First install ssh server as its not in the Linux machine by default using the command as privileged user:- 
+$ apt install openssh-server
+
+
+Step 2: Now Status checking of the installed server daemon that should be up and running -
+$ systemctl status ssh
+
+
+Step 3: start, restart and stop the ssh server using the “systemctl” command -
+$ systemctl restart ssh   -> this will restart the ssh server
+$ systemctl start ssh   -> this will start the ssh server again
+$ systemctl stop ssh   -> this will stop ssh the server
+
+
+So ssh server installation is done. Now we need to set and config things up:- 
+///we can enable ufw before this
+#ufw status
+If inactive 
+#ufw enable 
+This will active the ufw 
+////////
+Step 4: Opening ssh port 22 for incoming traffic on the firewall :
+#ufw allow ssh
+Step4: Enabling the SSH server to start automatically during boot:-
+#systemctl enable ssh
+
+
+Hostname changing
+To change and save the hostname running the following commands:-
+Step1: #hostnamectl set-hostname newHostName
+This will help to delete the previous hostname and change it to a new hostname 
+Step2: 
+Now see the hostname change in the hosts’ list 
+#nano /etc/hosts
+If it remains the previous one just change it to the newHostName that you have given in the step1 command. then save it by pressing 
+Ctrl+o -> enter -> ctrl+x
+
+
+Step 3:
+Now check the hostname 
+#hostname or
+#hostnamectl or
+# echo “$HOSTNAME” 
+
+
+We can check this name before changing the hostname.
+
+
+Connecting from remote client to my SSH server
+Step 1: Obtaining IP address from ssh server using the below command
+#ip a
+Step2: Now from a client we need to connect to the ssh server 
+#ssh root@ip_address
+Here root is the server’s username 
+
+
+
+
+***We can change the port 22 as well 
+#nano /etc/ssh/sshd_config
+First, uncomment the “port 22” then change 22 to any port number(8080) we want
+ctrl+O -> enter -> ctrl+x
+Step3: Now we need to allow the port 
+#ufw allow 8080/tcp
+
+
+Step 4: to apply the change we need to restart the server 
+#systemctl restart ssh
+
+
+*********************
+In order to remotely connect to a specific ssh server port we need to use the -p option of ssh command 
+# ssh -p 8080 root@192.168.0.109
+N.B: In case of a connection establishing issue, we should keep the network type the same in both local and remote machines. 
+And another precaution for internet connection issues needs to properly select your internet name and type for wireless/ ethernet connection.
