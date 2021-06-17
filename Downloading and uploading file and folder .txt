@@ -1,0 +1,26 @@
+﻿Downloading and uploading file and folder to or from the server machine to client machine using SCP commands on ssh server 
+Step1: We need the server machine’s IP address, to know -
+#ip a
+Collect or remember the IP address that comes after enet 
+Now download a file from the remote server machine to the client machine 
+
+
+Step2: From the client machine, we need to run a command like following format
+$scp remoteUserName@ipOfRemoteServer:filePath clientLocation
+In my case:- $scp root@192.168.0.106:/root/remoteFile.txt /home/al-amin/Dwonloads
+
+
+Entering there need authentication confirmation, just type yes. Done, now we can check the downloads directory and see our downloaded remoteFile.txt using cd and ls commands.
+
+
+Now upload a file from the client machine to the remote server machine 
+Step3: Just same as we downloaded file, but this time we need to change a bit like client file path first and server location last -
+$scp clientFilePath remoteUserName@ipOfRemoteServer:remoteFilePath
+In my case, $scp /home/al-amin/clientFile.txt root@192.168.0.106:/root/Desktop
+
+
+Now we don’t need to authenticate again, we just need to give the remote server password and done.
+To check, now we need to go to the server machine and go to the Desktop directory. 
+
+
+N.B: One thing to remember the file path /location here is absolute
