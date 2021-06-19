@@ -64,6 +64,7 @@ $su -> Give us the superuser previlages
 $su - ->Change the directory directly to root directory
 $su - user_name -> change directory to user_name home 
 $cd / -> root directory
+$cd - -> back to the user 
 
 
 
