@@ -63,5 +63,7 @@ $cd ~user_name -> Changes the working directory to the home directoryof user_nam
 $su -> Give us the superuser previlages
 $su - ->Change the directory directly to root directory
 $su - user_name -> change directory to user_name home 
+$cd / -> root directory
+
 
 
